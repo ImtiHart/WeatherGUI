@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/XML/XMLDocument.xml to edit this template
+-->
+
+
+
+<project name="WeatherUI" default="run" basedir=".">
+    <target name="compile">
+        <mkdir dir="build/classes"/>
+        <javac srcdir="src" destdir="build/classes" classpath="lib/json-2024303.jar"/>
+    </target>
+
+    <target name="run" depends="compile">
+        <java classname="WeatherUI" fork="true">
+            <classpath>
+                <pathelement path="build/classes"/>
+                <pathelement path="lib/json-2024303.jar"/>
+            </classpath>
+            </java>
+    </target>
+
+    <target name="clean">
+        <delete dir="build"/>
+    </target>
+</project>
+
+
